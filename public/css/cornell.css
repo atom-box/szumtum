@@ -1,0 +1,34 @@
+section#promo {
+    height: 46rem;
+  }
+  
+  article.tallPaul {
+      min-height: 30rem;
+  }
+  
+  .tab-pane.tallPaul#tab-2 {
+  /*not working*/
+  }
+  
+  
+  textarea.border  {
+      
+  }
+  
+  .col-form-label {
+      margin-top: -0.6rem;
+  }
+  
+  article#tab-two {
+      width: 60rem;
+      background: gray;
+  }
+  
+  div.content {
+    border: 0.1rem solid white;
+    /*background-color: rgba(44, 44, 44, 0.1);*/
+  }
+  
+  .wordholder {
+      word-wrap: break-word;
+  }
