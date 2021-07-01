@@ -1,8 +1,94 @@
 {{ include('common/_header.html.twig') }}
 
 
-<h3>Dog, leafblower, and helicopter.</h3>
-<p>Something should be after HERE-- {{controller_name}} --- BEFORE HERE.</p>
+<!-- START NAVIGATION TABS -->
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#tab-one" role="tab" aria-controls="tab-one" aria-selected="true">Step 1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#tab-two" role="tab" aria-controls="tab-two" aria-selected="false">Step 2</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#tab-three" role="tab" aria-controls="tab-three" aria-selected="false">Step 3</a>
+  </li>
+</ul>
+ 
+
+ <!-- |  |  |  |   |  |  |  |  |  |  |  |  |  |  |  |  |  |  |-->
+
+<div class="tab-content mt-3">
+  <article class="tab-pane active tallPaul" id="tab-one" role="tabpanel" aria-labelledby="tab-one-tab">
+
+    <!-- 111    111    111    111    111    111    -->
+    <!-- SECTION ONE -->
+        <div class="container text-center">
+
+
+            <!-- PASTE IN YOUR READING MATERIAL -->
+            <textarea class="form-control  border border-success" autofocus="autofocus" rows="13" aria-label="With textarea" placeholder="Type something here." id="zone-of-input" name="foo" ></textarea>
+
+
+            <!-- SELECT INPUT SOURCE -->
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input" onchange="lib.deliver('stashedByUser')" checked>
+                <label class="custom-control-label" for="customRadioInline1">User text</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline custom-radio-success">
+                <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input" onchange="lib.deliver('canterburyString')">
+                <label class="custom-control-label" for="customRadioInline2">Canterbury Prologue</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline3" name="customRadioInline" class="custom-control-input" onchange="lib.deliver('darkString')">
+                <label class="custom-control-label" for="customRadioInline3">Dark Matter</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline4" name="customRadioInline" class="custom-control-input" onchange='visifyBrowser()' >
+                <label class="custom-control-label" for="customRadioInline4">Upload pdf</label>
+            </div>
+
+            <!-- FILE BROWSE -->
+            <div class="row invisible" id="pdfButton" attic="visible">
+                <div class="input-group mb-3 col-4 offset-4">
+
+                    <div class="custom-file">
+                        <label class="custom-file-label" for="inputGroupFile01"><i>optional</i></label>
+                        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                    </div>
+                </div>
+            </div>
+        </div>        <!-- end container -->
+  </article>        <!-- end tab-pane -->
+
+
+    <!-- 222    222    222    222    222    222    -->
+    <!-- SECTION TWO -->
+  <article class="tab-pane tallPaul container" id="tab-two" role="tabpanel" aria-labelledby="tab-two-tab">
+      <!-- <h6>Into each box, type a question so that the text to the right is the answer.</h6> -->
+      <h6>You have reached the end of this program.  The rest of this app is UNWRITTEN!  Thank you for checking out the Zuntum App.</h6>
+      <form class="container">
+        <div class="form-group row">
+    <div class="col-sm-5">
+        <textarea type="text" class="form-control wordholder" id="x" placeholder="No text to read!"></textarea>
+    </div>
+    <label for="x" class="col-sm-7 col-form-label to-raise wordholder text-white">No text to read!</label>
+</div>
+    <div id="parsed-divs-go-here"></div>
+</form>
+  </article>
+
+      <!-- 333    333    333    333    333    333    -->
+    <!-- SECTION THREE -->
+  <article class="tab-pane tallPaul" id="tab-three" role="tabpanel" aria-labelledby="tab-three-tab">
+      <h2>Even better.</h2>
+
+
+
+
+  </article>
+
+</div>        <!-- end triple-tabbed row -->
 
 
 {{ include('common/_footer.html.twig') }}
