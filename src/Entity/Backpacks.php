@@ -35,5 +35,34 @@ class Backpacks
      */
     private $studyableId;
 
+    public function getBackpackId(): ?string
+    {
+        return $this->backpackId;
+    }
+
+    public function getUserId(): ?int
+    {
+        return $this->userId;
+    }
+
+    public function setUserId(?int $userId): self
+    {
+        $this->userId = $userId;
+
+        return $this;
+    }
+
+    public function getStudyableId(): ?int
+    {
+        return $this->studyableId;
+    }
+
+    public function setStudyableId(?int $studyableId): self
+    {
+        $this->studyableId = $studyableId;
+
+        return $this;
+    }
+
 
 }
