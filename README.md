@@ -1,6 +1,9 @@
-# Zumtum Reader Rememberer
+# Zumtum: An aid For Studying, Memorizing
 ![Screenshot of the Zumtum App](https://github.com/atom-box/zuntum/blob/master/zum_310x165.png)<br><br>
 [Run a preview version of ZumTum!](https://atom-box.github.io/zumtum/)
+## Cornell Notes
+Students have been using Cornell notes as a studying technique since at least the 1940s.  This app is a tool for making Cornell notes.
+
 ## Under construction (July 2021)
 (2019) Zumtum Javascript app --> (2021) PHP/Symfony App. 
 ## The Goal:
