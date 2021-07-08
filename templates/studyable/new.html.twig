@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
+    {% block title %}
+    Step 1 | zumtum  
+    {% endblock %}
 
-        {% block content %}
-            {{ form(form) }}
-        {% endblock %}
+    {% block content %}
+    <div class="form-group">
+        {{ form(form) }}
+    </div>
+    {% endblock %}
