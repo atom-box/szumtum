@@ -4,7 +4,80 @@
     {% endblock %}
 
     {% block content %}
-    <div class="form-group">
-        {{ form(form) }}
+
+
+{# ooooooooooooooooooooooooooooooooooooooooooooo #}
+
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#tab-one" role="tab" aria-controls="tab-one" aria-selected="true">Step 1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#tab-two" role="tab" aria-controls="tab-two" aria-selected="false">Step 2</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#tab-three" role="tab" aria-controls="tab-three" aria-selected="false">Step 3</a>
+  </li>
+</ul>
+ 
+
+ <!-- |  |  |  |   |  |  |  |  |  |  |  |  |  |  |  |  |  |  |-->
+
+<div class="tab-content mt-3">
+  <article class="tab-pane active tallPaul" id="tab-one" role="tabpanel" aria-labelledby="tab-one-tab">
+
+    <!-- 111    111    111    111    111    111    -->
+    <!-- SECTION ONE -->
+        <div class="container text-center">
+            <div class="form-group">
+                {{ form(form) }}
+            </div>
+        </div>        <!-- end container -->
+  </article>        <!-- end tab-pane -->
+
+
+    <!-- 222    222    222    222    222    222    -->
+    <!-- SECTION TWO -->
+  <article class="tab-pane tallPaul container" id="tab-two" role="tabpanel" aria-labelledby="tab-two-tab">
+      <!-- <h6>Into each box, type a question so that the text to the right is the answer.</h6> -->
+      <h6>You have reached the end of this program.  The rest of this app is UNWRITTEN!  Thank you for checking out the Zuntum App.</h6>
+      <form class="container">
+        <div class="form-group row">
+    <div class="col-sm-5">
+        <textarea type="text" class="form-control wordholder" id="x" placeholder="No text to read!"></textarea>
     </div>
+    <label for="x" class="col-sm-7 col-form-label to-raise wordholder text-white">No text to read!</label>
+</div>
+    <div id="parsed-divs-go-here"></div>
+</form>
+  </article>
+
+      <!-- 333    333    333    333    333    333    -->
+    <!-- SECTION THREE -->
+  <article class="tab-pane tallPaul" id="tab-three" role="tabpanel" aria-labelledby="tab-three-tab">
+      <h2>Even better.</h2>
+
+
+
+
+  </article>
+
+</div>        <!-- end triple-tabbed row -->
+
+
+
+
+
+<!-- .....  pristine, un-minimized i think
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-success">Back</button>
+      <button type="submit" class="btn btn-success">Save</button>
+      <button type="submit" class="btn btn-success">Forward</button>
+
+    </div>
+  </div>
+.....
+ -->
     {% endblock %}
