@@ -21,7 +21,7 @@ class StudyableController extends AbstractController
 
         $form = $this->createForm(StudyableFormType::class, $studyable);
 
-        return $this->render('studyable/new.html.twig', [
+        return $this->render('studyable/_step1.html.twig', [
             'form' => $form->createView(),
         ]);
     }
