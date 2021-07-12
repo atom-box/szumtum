@@ -18,3 +18,13 @@ This is the familiar 1-2-3 of Cornell notes, applied to reading of news or text,
 
 ## DB info 
 Saved to my local machine as `deploy.md`
+
+## Todo
+*  handle the data from step 1
+*  color the background, in resets css
+*  dropdown, from Controller FormsType.php
+
+
+## Wishlist
+*  persist to DB via Doctrine object
+*  bring in the existing page1, set as homepage(){render}

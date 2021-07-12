@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Title;
+use App\Entity\Tome;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Title|null find($id, $lockMode = null, $lockVersion = null)
- * @method Title|null findOneBy(array $criteria, array $orderBy = null)
- * @method Title[]    findAll()
- * @method Title[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Tome|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Tome|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Tome[]    findAll()
+ * @method Tome[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class TitleRepository extends ServiceEntityRepository
+class TomeRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Title::class);
+        parent::__construct($registry, Tome::class);
     }
 
     // /**
-    //  * @return Title[] Returns an array of Title objects
+    //  * @return Tome[] Returns an array of Tome objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class TitleRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Title
+    public function findOneBySomeField($value): ?Tome
     {
         return $this->createQueryBuilder('t')
             ->andWhere('t.exampleField = :val')
