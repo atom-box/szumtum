@@ -19,11 +19,19 @@ class TomeController extends AbstractController
         $tome = new Tome();
         $tome->setTitle('yooooo');
         $tome->setBody('');
-        $em->persist($tome);
-        // SET ALL FOUR
-        $em->flush();
 
         $form = $this->createForm(TomeFormType::class, $tome);
+
+        $form->handleRequest($req);
+        if ($form->isSubmitted() && $form->isValid()) {
+            /** @var Tome $tome */
+            $tome = $form->getData();
+        $em->persist($tome);
+        $em->flush();
+        $this->addFlash('alert', "Things happened, probably good.");
+        return $this->redirectToRoute(todotodotodo);
+    }
+
 
         return $this->render('tome/_step1.html.twig', [
             'form' => $form->createView(),
