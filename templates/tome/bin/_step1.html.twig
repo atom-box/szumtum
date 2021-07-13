@@ -9,22 +9,33 @@
     {{ include('common/_header.html.twig') }}
 {% endblock %}
 
-
 {% block content %}
 
-
-  <div class="container">
-  <button type="button" class="btn btn-outline-dark ">Step 1</button>
-  <button type="button" class="btn btn-outline-dark">Step 2</button>
-  <button type="button" class="btn btn-outline-dark">Step 3</button>
-</div>
+<div class="container" id="tabs-container">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#tab-one" role="tab" aria-controls="tab-one" aria-selected="true">
+                Step 1
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tab-two" role="tab" aria-controls="tab-two" aria-selected="false">
+                Step 2
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tab-three" role="tab" aria-controls="tab-three" aria-selected="false">
+                Step 3
+            </a>
+        </li>
+    </ul>
 
     <div class="tab-content mt-3">
         <article class="tab-pane active tallPaul" id="tab-one" role="tabpanel" aria-labelledby="tab-one-tab">
 
             <!-- 111    111    111    111    111    111    -->
             <!-- SECTION ONE -->
-                <div class="container text-center"> <div class="form-group">
+                <div class="container"> <div class="form-group">
                     {{ form(form) }}
                     </div>
                 </div>
@@ -60,6 +71,8 @@
             </article>
         </div>
     <!-- end triple-tabbed row -->
+
+    </div>
 
     <!-- .....  pristine, un-minimized i think
       <div class="form-group row">

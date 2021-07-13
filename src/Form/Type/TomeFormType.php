@@ -16,7 +16,7 @@ class TomeFormType extends AbstractType
         $builder
             ->add('title', TextType::class)
             ->add('body', TextareaType::class )
-            ->add('save', SubmitType::class)
+            ->add('save', SubmitType::class, ['attr'=> ['class' => 'btn-secondary']])
             // ->add('title', StringType::class)
             // ->add('body', TextType::class)
         ;

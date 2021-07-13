@@ -17,7 +17,7 @@ class TomeController extends AbstractController
     public function setText(EntityManagerInterface $em, Request $req): Response
     {
         $tome = new Tome();
-        $tome->setTitle('yooooo');
+        $tome->setTitle('My Title');
         $tome->setBody('');
 
         $form = $this->createForm(TomeFormType::class, $tome);

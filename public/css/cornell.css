@@ -15,6 +15,16 @@ article#tab-two {
     width: 60rem;
     background: gray;
 }
+
+#tabs-container {
+    width: 70%;
+}
+
+xform {
+    /* width: 60rem; */
+    /* background: #b4ca65; */
+    border: 0.1rem solid #607026;
+}
 div.content {
   border: 0.1rem solid white;
   /*background-color: rgba(44, 44, 44, 0.1);*/
