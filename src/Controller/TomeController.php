@@ -29,11 +29,11 @@ class TomeController extends AbstractController
         $em->persist($tome);
         $em->flush();
         $this->addFlash('alert', "Things happened, probably good.");
-        return $this->redirectToRoute(todotodotodo);
+        return $this->redirectToRoute('writequestions');
     }
 
 
-        return $this->render('tome/_step1.html.twig', [
+        return $this->render('tome/bin/_step1.html.twig', [
             'form' => $form->createView(),
         ]);
     }
