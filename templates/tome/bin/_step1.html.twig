@@ -38,7 +38,10 @@
                 <div class="container"> 
                     <div class="form-group">
                     {{ form(form) }}
-                    {{tomes[0]['body']}}
+                    {% for tome in tomes %}
+                    {{tome['body']}}
+                    <p>champagne for otters</p>
+                    {% endfor %}
                     </div>
                 </div>
             <!-- end container -->
