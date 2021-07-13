@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Entity\Tome;
@@ -26,15 +27,17 @@ class TomeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var Tome $tome */
             $tome = $form->getData();
-        $em->persist($tome);
-        $em->flush();
-        $this->addFlash('alert', "Things happened, probably good.");
-        return $this->redirectToRoute('writequestions');
-    }
+            $em->persist($tome);
+            $em->flush();
+            $this->addFlash('alert', "Things happened, probably good.");
+            return $this->redirectToRoute('writequestions');
+        }
 
-
+        // make an array of all the tomes. pass array of tomes to the twig.
+        $tomes = [['title' => 'AAAAAA', 'body' => 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum '], ['title' => 'BBBBB', 'body' => 'in the field around the bend ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum '], ['title' => 'cCCCCCc', 'body' => 'lorem ipsum lorem the corn grows high ipsum lorem ipsum '],];
         return $this->render('tome/bin/_step1.html.twig', [
             'form' => $form->createView(),
+            'tomes' => $tomes,
         ]);
     }
 }
