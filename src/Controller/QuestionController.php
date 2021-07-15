@@ -13,9 +13,9 @@ class QuestionController extends AbstractController
     public $chunks = [];
 
     /**
-     * @Route("/write-questions", name="writequestions")
+     * @Route("/{title}/write-questions", name="writequestions")
      */
-    public function writeQuestions(EntityManagerInterface $em, Request $req, TomeController $tc): Response
+    public function writeQuestions(EntityManagerInterface $em, Request $req, TomeController $tc, string $title): Response
     {
         // dd($req);
         // CHUNKIFY
@@ -31,8 +31,8 @@ class QuestionController extends AbstractController
         //         'No product found for id '.$id
         //     );
         // }
-        $chunks = $this->parseTome($tc->temporaryChaucer);
-        // dd($chunks[0]);
+        // $chunks = $this->parseTome($body);
+        $chunks = $this->parseTome('asdfja;lsdkjf asdf;kjasdf.   asldfkajsdf;k.     sadsdf.' . $title);
         return $this->render('question/bin/_step2.html.twig', [
             'chunks' => $chunks[0],
         ]);
