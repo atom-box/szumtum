@@ -125,7 +125,7 @@ class TomeController extends AbstractController
     public function setText(EntityManagerInterface $em, Request $req): Response
     {
         $tome = new Tome();
-        $tome->setTitle('Canterbury Tales Prologue');
+        $tome->setTitle('Canterbury');
         $tome->setBody($this->temporaryChaucer);
 
         $form = $this->createForm(TomeFormType::class, $tome);
@@ -137,7 +137,8 @@ class TomeController extends AbstractController
             $em->persist($tome);
             $em->flush();
             $this->addFlash('alert', "Things happened, probably good.");
-            return $this->redirect('/foo00000000000/write-questions');
+            $newRoute = '/' . $tome->getTitle() . '/write-questions';
+            return $this->redirect($newRoute);
         }
 
         // make an array of all the tomes. pass array of tomes to the twig.

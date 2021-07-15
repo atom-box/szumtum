@@ -19,22 +19,28 @@ class QuestionRepository extends ServiceEntityRepository
         parent::__construct($registry, Question::class);
     }
 
+    
     /**
      * @return Question[] Returns an array of Question objects
      */
      public function findByTitle(string $title)
      {
         $em = $this->getEntityManager();
+        // TODO   TODO    TODO 
+        // $query = $em->createQuery(
+        //     'SELECT body FROM tome WHERE title = "Canterbury Tales Prologue";'
+            // 'SELECT c
+            // FROM App\Ent    ity\Question p
+            // WHERE p.price > :price
+            // ORDER BY p.price ASC'
+        // )->setParameter('chunk', $chunk);
 
-        $query = $em->createQuery(
-            'SELECT c
-            FROM App\Ent    ity\Question p
-            WHERE p.price > :price
-            ORDER BY p.price ASC'
-        )->setParameter('chunk', $chunk);
 
-        // returns an array of Product objects
-        return $query->getResult();
+    //     $tomeRow = $this->getDoctrine()
+    //     ->getRepository(Tome::class)
+    //     ->find($title);
+    //     // returns an array of Product objects
+    //     return $tomeRow->getResult();
      }
 
      /*
