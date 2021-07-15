@@ -32,8 +32,9 @@ class QuestionController extends AbstractController
         //     );
         // }
         $chunks = $this->parseTome($tc->temporaryChaucer);
+        // dd($chunks[0]);
         return $this->render('question/bin/_step2.html.twig', [
-            'chunks' => $chunks,
+            'chunks' => $chunks[0],
         ]);
 
 
@@ -42,8 +43,7 @@ class QuestionController extends AbstractController
     private function parseTome(string $input): array
     {
         $chunks = [];
-        $chunks = ['7', '8', '9'];
-        $chunks[] = $input;
+        $chunks[] = explode('.', $input);
         return $chunks;
     }
 
