@@ -19,10 +19,25 @@ class QuestionRepository extends ServiceEntityRepository
         parent::__construct($registry, Question::class);
     }
 
-    // /**
-    //  * @return Question[] Returns an array of Question objects
-    //  */
-    /*
+    /**
+     * @return Question[] Returns an array of Question objects
+     */
+     public function findByTitle(string $title)
+     {
+        $em = $this->getEntityManager();
+
+        $query = $em->createQuery(
+            'SELECT c
+            FROM App\Ent    ity\Question p
+            WHERE p.price > :price
+            ORDER BY p.price ASC'
+        )->setParameter('chunk', $chunk);
+
+        // returns an array of Product objects
+        return $query->getResult();
+     }
+
+     /*
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('q')

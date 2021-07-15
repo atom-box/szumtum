@@ -12,7 +12,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class TomeController extends AbstractController
 {
-    protected $temporaryChaucer =<<<CHA
+    public $chunks = [1, 2, 3];
+    public $temporaryChaucer =<<<CHA
         Whan that Aprill with his shoures soote
     The droghte of March hath perced to the roote,
     And bathed every veyne in swich licour
@@ -136,12 +137,10 @@ class TomeController extends AbstractController
             $em->persist($tome);
             $em->flush();
             $this->addFlash('alert', "Things happened, probably good.");
-            return $this->redirectToRoute('writequestions');
+            return $this->redirectToRoute('writequestions', ['FOO!', 'BAR!',]);
         }
 
         // make an array of all the tomes. pass array of tomes to the twig.
-        $tomes = [$tome,];
-        
         $tomes = [['title' => $tome->getTitle() , 'body' => $tome->getBody()], ['title' => 'BBBBB', 'body' => 'in the field around the bend ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum '], ['title' => 'cCCCCCc', 'body' => 'lorem ipsum lorem the corn grows high ipsum lorem ipsum '],];
         return $this->render('tome/bin/_step1.html.twig', [
             'form' => $form->createView(),

@@ -33,6 +33,11 @@ class Question
      */
     private $tome;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $chunk;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -70,6 +75,18 @@ class Question
     public function setTome(?Tome $tome): self
     {
         $this->tome = $tome;
+
+        return $this;
+    }
+
+    public function getChunk(): ?string
+    {
+        return $this->chunk;
+    }
+
+    public function setChunk(string $chunk): self
+    {
+        $this->chunk = $chunk;
 
         return $this;
     }

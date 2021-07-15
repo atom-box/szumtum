@@ -2,7 +2,6 @@
 namespace App\Controller;
 
 use App\Entity\Question;
-use App\Form\Type\TomeFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,15 +10,41 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class QuestionController extends AbstractController
 {
+    public $chunks = [];
+
     /**
      * @Route("/write-questions", name="writequestions")
      */
-    public function writeQuestions(EntityManagerInterface $em, Request $req): Response
+    public function writeQuestions(EntityManagerInterface $em, Request $req, TomeController $tc): Response
     {
-        return $this->render('question/bin/_step2.html.twig');
+        // dd($req);
+        // CHUNKIFY
+        // SEND THAT TO THE DB
+        // USE THE LOCAL CHUNKS
+
+        // $chunks = $this->getDoctrine()
+        //     ->getRepository(Question::class)
+        //     ->getChunk();
+
+        // if (!$chunks) {
+        //     throw $this->createNotFoundException(
+        //         'No product found for id '.$id
+        //     );
+        // }
+        $chunks = $this->parseTome($tc->temporaryChaucer);
+        return $this->render('question/bin/_step2.html.twig', [
+            'chunks' => $chunks,
+        ]);
 
 
     }
 
+    private function parseTome(string $input): array
+    {
+        $chunks = [];
+        $chunks = ['7', '8', '9'];
+        $chunks[] = $input;
+        return $chunks;
+    }
 
 }
